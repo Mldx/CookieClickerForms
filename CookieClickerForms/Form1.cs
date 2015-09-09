@@ -21,46 +21,10 @@ namespace CookieClickerForms
         public long cookies = 0;
         public int upgradeamount = 0;
         public int upgradeprice = 100;
-        public int build1amount = 0;
-        public int build1price = 100;
-        public int build2amount = 0;
-        public int build2price = 500;
-        public int build3amount = 0;
-        public int build3price = 1000;
-        public int build4amount = 0;
-        public int build4price = 2500;
-        public int build5amount = 0;
-        public int build5price = 5000;
-        public int build6amount = 0;
-        public int build6price = 10000;
-        public int build7amount = 0;
-        public int build7price = 25000;
-        public int build8amount = 0;
-        public int build8price = 50000;
-        public int build9amount = 0;
-        public int build9price = 75000;
-        public int build10amount = 0;
-        public int build10price = 100000;
-        public int build11amount = 0;
-        public int build11price = 150000;
-        public int build12amount = 0;
-        public int build12price = 200000;
-        public int build13amount = 0;
-        public int build13price = 250000;
-        public int build14amount = 0;
-        public int build14price = 500000;
-        public int build15amount = 0;
-        public int build15price = 1000000;
-        public int build16amount = 0;
-        public int build16price = 1500000;
-        public int build17amount = 0;
-        public int build17price = 2500000;
-        public int build18amount = 0;
-        public int build18price = 5000000;
-        public int build19amount = 0;
-        public int build19price = 7500000;
-        public int build20amount = 0;
-        public int build20price = 10000000;
+
+        public int[] buildamount = new int[20] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        public long[] buildprice = new long[20] {100, 500, 1000, 2500, 5000, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 250000, 500000, 1000000, 1500000, 2500000, 5000000, 7500000, 10000000};
+        public bool[] ach = new bool[13] {false, false, false, false, false, false, false, false, false, false, false, false, false};
 
         public long record = 0;
         public long total = 0;
@@ -79,77 +43,9 @@ namespace CookieClickerForms
         public string totalmadetxt = "0";
         public string buildingstxt = "0";
         public string cookiessectxt = "0";
-        public string build1amounttxt = "0";
-        public string build2amounttxt = "0";
-        public string build3amounttxt = "0";
-        public string build4amounttxt = "0";
-        public string build5amounttxt = "0";
-        public string build6amounttxt = "0";
-        public string build7amounttxt = "0";
-        public string build8amounttxt = "0";
-        public string build9amounttxt = "0";
-        public string build10amounttxt = "0";
-        public string build11amounttxt = "0";
-        public string build12amounttxt = "0";
-        public string build13amounttxt = "0";
-        public string build14amounttxt = "0";
-        public string build15amounttxt = "0";
-        public string build16amounttxt = "0";
-        public string build17amounttxt = "0";
-        public string build18amounttxt = "0";
-        public string build19amounttxt = "0";
-        public string build20amounttxt = "0";
-        public string build1pricetxt = "100";
-        public string build2pricetxt = "500";
-        public string build3pricetxt = "1000";
-        public string build4pricetxt = "2500";
-        public string build5pricetxt = "5000";
-        public string build6pricetxt = "10000";
-        public string build7pricetxt = "25000";
-        public string build8pricetxt = "50000";
-        public string build9pricetxt = "75000";
-        public string build10pricetxt = "100000";
-        public string build11pricetxt = "150000";
-        public string build12pricetxt = "200000";
-        public string build13pricetxt = "250000";
-        public string build14pricetxt = "500000";
-        public string build15pricetxt = "1000000";
-        public string build16pricetxt = "1500000";
-        public string build17pricetxt = "2500000";
-        public string build18pricetxt = "5000000";
-        public string build19pricetxt = "7500000";
-        public string build20pricetxt = "10000000";
         public string achievementamounttxt = "0";
-        public bool achatxt = false;
-        public bool achbtxt = false;
-        public bool achctxt = false;
-        public bool achdtxt = false;
-        public bool achetxt = false;
-        public bool achftxt = false;
-        public bool achgtxt = false;
-        public bool achhtxt = false;
-        public bool achitxt = false;
-        public bool achjtxt = false;
-        public bool achktxt = false;
-        public bool achltxt = false;
-        public bool achmtxt = false;
         public string upgradeamounttxt = "0";
         public string upgradepricetxt = "100";
-
-        //Achievements
-        public bool acha = false;
-        public bool achb = false;
-        public bool achc = false;
-        public bool achd = false;
-        public bool ache = false;
-        public bool achf = false;
-        public bool achg = false;
-        public bool achh = false;
-        public bool achi = false;
-        public bool achj = false;
-        public bool achk = false;
-        public bool achl = false;
-        public bool achm = false;
 
         private void button1_Click(object sender, EventArgs e) //Make cookie button
         {
@@ -182,26 +78,26 @@ namespace CookieClickerForms
         {
             label1.Text = cookies.ToString();
             label3.Text = "Price: " + upgradeprice + "   Amount: " + upgradeamount;
-            label4.Text = "Price: " + build1price + "   Amount: " + build1amount;
-            label5.Text = "Price: " + build2price + "   Amount: " + build2amount;
-            label6.Text = "Price: " + build3price + "   Amount: " + build3amount;
-            label7.Text = "Price: " + build4price + "   Amount: " + build4amount;
-            label8.Text = "Price: " + build5price + "   Amount: " + build5amount;
-            label9.Text = "Price: " + build6price + "   Amount: " + build6amount;
-            label10.Text = "Price: " + build7price + "   Amount: " + build7amount;
-            label11.Text = "Price: " + build8price + "   Amount: " + build8amount;
-            label12.Text = "Price: " + build9price + "   Amount: " + build9amount;
-            label13.Text = "Price: " + build10price + "   Amount: " + build10amount;
-            label14.Text = "Price: " + build11price + "   Amount: " + build11amount;
-            label15.Text = "Price: " + build12price + "   Amount: " + build12amount;
-            label16.Text = "Price: " + build13price + "   Amount: " + build13amount;
-            label17.Text = "Price: " + build14price + "   Amount: " + build14amount;
-            label18.Text = "Price: " + build15price + "   Amount: " + build15amount;
-            label19.Text = "Price: " + build16price + "   Amount: " + build16amount;
-            label23.Text = "Price: " + build17price + "   Amount: " + build17amount;
-            label24.Text = "Price: " + build18price + "   Amount: " + build18amount;
-            label25.Text = "Price: " + build19price + "   Amount: " + build19amount;
-            label26.Text = "Price: " + build20price + "   Amount: " + build20amount;
+            label4.Text = "Price: " + buildprice[0] + "   Amount: " + buildamount[0];
+            label5.Text = "Price: " + buildprice[1] + "   Amount: " + buildamount[1];
+            label6.Text = "Price: " + buildprice[2] + "   Amount: " + buildamount[2];
+            label7.Text = "Price: " + buildprice[3] + "   Amount: " + buildamount[3];
+            label8.Text = "Price: " + buildprice[4] + "   Amount: " + buildamount[4];
+            label9.Text = "Price: " + buildprice[5] + "   Amount: " + buildamount[5];
+            label10.Text = "Price: " + buildprice[6] + "   Amount: " + buildamount[6];
+            label11.Text = "Price: " + buildprice[7] + "   Amount: " + buildamount[7];
+            label12.Text = "Price: " + buildprice[8] + "   Amount: " + buildamount[8];
+            label13.Text = "Price: " + buildprice[9] + "   Amount: " + buildamount[9];
+            label14.Text = "Price: " + buildprice[10] + "   Amount: " + buildamount[10];
+            label15.Text = "Price: " + buildprice[11] + "   Amount: " + buildamount[11];
+            label16.Text = "Price: " + buildprice[12] + "   Amount: " + buildamount[12];
+            label17.Text = "Price: " + buildprice[13] + "   Amount: " + buildamount[13];
+            label18.Text = "Price: " + buildprice[14] + "   Amount: " + buildamount[14];
+            label19.Text = "Price: " + buildprice[15] + "   Amount: " + buildamount[15];
+            label23.Text = "Price: " + buildprice[16] + "   Amount: " + buildamount[16];
+            label24.Text = "Price: " + buildprice[17] + "   Amount: " + buildamount[17];
+            label25.Text = "Price: " + buildprice[18] + "   Amount: " + buildamount[18];
+            label26.Text = "Price: " + buildprice[19] + "   Amount: " + buildamount[19];
             label28.Text = total.ToString();
             label32.Text = buildings.ToString();
             label33.Text = cookiessec.ToString();
@@ -214,288 +110,288 @@ namespace CookieClickerForms
 
         private void button4_Click(object sender, EventArgs e) //When buying building 1
         {
-            if (cookies >= build1price)
+            if (cookies >= buildprice[0])
             {
-                cookies = cookies - build1price;
-                build1amount = build1amount + 1;
-                build1price = build1price + 150;
+                cookies = cookies - buildprice[0];
+                buildamount[0] = buildamount[0] + 1;
+                buildprice[0] = buildprice[0] + 150;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 1;
-                label4.Text = "Price: " + build1price + "   Amount: " + build1amount;
+                label4.Text = "Price: " + buildprice[0] + "   Amount: " + buildamount[0];
             }
         }
 
         private void button5_Click(object sender, EventArgs e) //When buying building 2
         {
-            if (cookies >= build2price)
+            if (cookies >= buildprice[1])
             {
-                cookies = cookies - build2price;
-                build2amount = build2amount + 1;
-                build2price = build2price + 650;
+                cookies = cookies - buildprice[1];
+                buildamount[1] = buildamount[1] + 1;
+                buildprice[1] = buildprice[1] + 650;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 5;
-                label5.Text = "Price: " + build2price + "   Amount: " + build2amount;
+                label5.Text = "Price: " + buildprice[1] + "   Amount: " + buildamount[1];
             }
         }
 
         private void button6_Click(object sender, EventArgs e) //When buying building 3
         {
-            if (cookies >= build3price)
+            if (cookies >= buildprice[2])
             {
-                cookies = cookies - build3price;
-                build3amount = build3amount + 1;
-                build3price = build3price + 1150;
+                cookies = cookies - buildprice[2];
+                buildamount[2] = buildamount[2] + 1;
+                buildprice[2] = buildprice[2] + 1150;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 10;
-                label6.Text = "Price: " + build3price + "   Amount: " + build3amount;
+                label6.Text = "Price: " + buildprice[2] + "   Amount: " + buildamount[2];
             }
         }
 
         private void button7_Click(object sender, EventArgs e) //When buying building 4
         {
-            if (cookies >= build4price)
+            if (cookies >= buildprice[3])
             {
-                cookies = cookies - build4price;
-                build4amount = build4amount + 1;
-                build4price = build4price + 2650;
+                cookies = cookies - buildprice[3];
+                buildamount[3] = buildamount[3] + 1;
+                buildprice[3] = buildprice[3] + 2650;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 25;
-                label7.Text = "Price: " + build4price + "   Amount: " + build4amount;
+                label7.Text = "Price: " + buildprice[3] + "   Amount: " + buildamount[3];
             }
         }
 
         private void button8_Click(object sender, EventArgs e) //When buying building 5
         {
-            if (cookies >= build5price)
+            if (cookies >= buildprice[4])
             {
-                cookies = cookies - build5price;
-                build5amount = build5amount + 1;
-                build5price = build5price + 5150;
+                cookies = cookies - buildprice[4];
+                buildamount[4] = buildamount[4] + 1;
+                buildprice[4] = buildprice[4] + 5150;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 50;
-                label8.Text = "Price: " + build5price + "   Amount: " + build5amount;
+                label8.Text = "Price: " + buildprice[4] + "   Amount: " + buildamount[4];
             }
         }
 
         private void button9_Click(object sender, EventArgs e) //When buying building 6
         {
-            if (cookies >= build6price)
+            if (cookies >= buildprice[5])
             {
-                cookies = cookies - build6price;
-                build6amount = build6amount + 1;
-                build6price = build6price + 10250;
+                cookies = cookies - buildprice[5];
+                buildamount[5] = buildamount[5] + 1;
+                buildprice[5] = buildprice[5] + 10250;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 100;
-                label9.Text = "Price: " + build6price + "   Amount: " + build6amount;
+                label9.Text = "Price: " + buildprice[5] + "   Amount: " + buildamount[5];
             }
         }
 
         private void button10_Click(object sender, EventArgs e) //When buying building 7
         {
-            if (cookies >= build7price)
+            if (cookies >= buildprice[6])
             {
-                cookies = cookies - build7price;
-                build7amount = build7amount + 1;
-                build7price = build7price + 25250;
+                cookies = cookies - buildprice[6];
+                buildamount[6] = buildamount[6] + 1;
+                buildprice[6] = buildprice[6] + 25250;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 250;
-                label10.Text = "Price: " + build7price + "   Amount: " + build7amount;
+                label10.Text = "Price: " + buildprice[6] + "   Amount: " + buildamount[6];
             }
         }
 
         private void button11_Click(object sender, EventArgs e) //When buying building 8
         {
-            if (cookies >= build8price)
+            if (cookies >= buildprice[7])
             {
-                cookies = cookies - build8price;
-                build8amount = build8amount + 1;
-                build8price = build8price + 50250;
+                cookies = cookies - buildprice[7];
+                buildamount[7] = buildamount[7] + 1;
+                buildprice[7] = buildprice[7] + 50250;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 500;
-                label11.Text = "Price: " + build8price + "   Amount: " + build8amount;
+                label11.Text = "Price: " + buildprice[7] + "   Amount: " + buildamount[7];
             }
         }
 
         private void button12_Click(object sender, EventArgs e) //When buying building 9
         {
-            if (cookies >= build9price)
+            if (cookies >= buildprice[8])
             {
-                cookies = cookies - build9price;
-                build9amount = build9amount + 1;
-                build9price = build9price + 75250;
+                cookies = cookies - buildprice[8];
+                buildamount[8] = buildamount[8] + 1;
+                buildprice[8] = buildprice[8] + 75250;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 750;
-                label12.Text = "Price: " + build9price + "   Amount: " + build9amount;
+                label12.Text = "Price: " + buildprice[8] + "   Amount: " + buildamount[8];
             }
         }
 
         private void button13_Click(object sender, EventArgs e) //When buying building 10
         {
-            if (cookies >= build10price)
+            if (cookies >= buildprice[9])
             {
-                cookies = cookies - build10price;
-                build10amount = build10amount + 1;
-                build10price = build10price + 100500;
+                cookies = cookies - buildprice[9];
+                buildamount[9] = buildamount[9] + 1;
+                buildprice[9] = buildprice[9] + 100500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 1000;
-                label13.Text = "Price: " + build10price + "   Amount: " + build10amount;
+                label13.Text = "Price: " + buildprice[9] + "   Amount: " + buildamount[9];
             }
         }
 
         private void button14_Click(object sender, EventArgs e) //When buying building 11
         {
-            if (cookies >= build11price)
+            if (cookies >= buildprice[10])
             {
-                cookies = cookies - build11price;
-                build11amount = build11amount + 1;
-                build11price = build11price + 150500;
+                cookies = cookies - buildprice[10];
+                buildamount[10] = buildamount[10] + 1;
+                buildprice[10] = buildprice[10] + 150500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 1500;
-                label14.Text = "Price: " + build11price + "   Amount: " + build11amount;
+                label14.Text = "Price: " + buildprice[10] + "   Amount: " + buildamount[10];
             }
         }
 
         private void button15_Click(object sender, EventArgs e) //When buying building 12
         {
-            if (cookies >= build12price)
+            if (cookies >= buildprice[11])
             {
-                cookies = cookies - build12price;
-                build12amount = build12amount + 1;
-                build12price = build12price + 200500;
+                cookies = cookies - buildprice[11];
+                buildamount[11] = buildamount[11] + 1;
+                buildprice[11] = buildprice[11] + 200500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 2000;
-                label15.Text = "Price: " + build12price + "   Amount: " + build12amount;
+                label15.Text = "Price: " + buildprice[11] + "   Amount: " + buildamount[11];
             }
         }
 
         private void button16_Click(object sender, EventArgs e) //When buying building 13
         {
-            if (cookies >= build13price)
+            if (cookies >= buildprice[12])
             {
-                cookies = cookies - build13price;
-                build13amount = build13amount + 1;
-                build13price = build13price + 251000;
+                cookies = cookies - buildprice[12];
+                buildamount[12] = buildamount[12] + 1;
+                buildprice[12] = buildprice[12] + 251000;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 2500;
-                label16.Text = "Price: " + build13price + "   Amount: " + build13amount;
+                label16.Text = "Price: " + buildprice[12] + "   Amount: " + buildamount[12];
             }
         }
 
         private void button17_Click(object sender, EventArgs e) //When buying building 14
         {
-            if (cookies >= build14price)
+            if (cookies >= buildprice[13])
             {
-                cookies = cookies - build14price;
-                build14amount = build14amount + 1;
-                build14price = build14price + 501500;
+                cookies = cookies - buildprice[13];
+                buildamount[13] = buildamount[13] + 1;
+                buildprice[13] = buildprice[13] + 501500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 5000;
-                label17.Text = "Price: " + build14price + "   Amount: " + build14amount;
+                label17.Text = "Price: " + buildprice[13] + "   Amount: " + buildamount[13];
             }
         }
 
         private void button18_Click(object sender, EventArgs e) //When buying building 15
         {
-            if (cookies >= build15price)
+            if (cookies >= buildprice[14])
             {
-                cookies = cookies - build15price;
-                build15amount = build15amount + 1;
-                build15price = build15price + 1002000;
+                cookies = cookies - buildprice[14];
+                buildamount[14] = buildamount[14] + 1;
+                buildprice[14] = buildprice[14] + 1002000;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 10000;
-                label18.Text = "Price: " + build15price + "   Amount: " + build15amount;
+                label18.Text = "Price: " + buildprice[14] + "   Amount: " + buildamount[14];
             }
         }
 
         private void button19_Click(object sender, EventArgs e) //When buying building 16
         {
-            if (cookies >= build16price)
+            if (cookies >= buildprice[15])
             {
-                cookies = cookies - build16price;
-                build16amount = build16amount + 1;
-                build16price = build16price + 1502000;
+                cookies = cookies - buildprice[15];
+                buildamount[15] = buildamount[15] + 1;
+                buildprice[15] = buildprice[15] + 1502000;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 15000;
-                label19.Text = "Price: " + build16price + "   Amount: " + build16amount;
+                label19.Text = "Price: " + buildprice[15] + "   Amount: " + buildamount[15];
             }
         }
 
         private void button20_Click(object sender, EventArgs e) //When buying building 17
         {
-            if (cookies >= build17price)
+            if (cookies >= buildprice[16])
             {
-                cookies = cookies - build17price;
-                build17amount = build17amount + 1;
-                build17price = build17price + 2502000;
+                cookies = cookies - buildprice[16];
+                buildamount[16] = buildamount[16] + 1;
+                buildprice[16] = buildprice[16] + 2502000;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 25000;
-                label23.Text = "Price: " + build17price + "   Amount: " + build17amount;
+                label23.Text = "Price: " + buildprice[16] + "   Amount: " + buildamount[16];
             }
         }
         private void button21_Click(object sender, EventArgs e)//When buying building 18
         {
-            if (cookies >= build18price)
+            if (cookies >= buildprice[17])
             {
-                cookies = cookies - build18price;
-                build18amount = build18amount + 1;
-                build18price = build18price + 5002500;
+                cookies = cookies - buildprice[17];
+                buildamount[17] = buildamount[17] + 1;
+                buildprice[17] = buildprice[17] + 5002500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 50000;
-                label24.Text = "Price: " + build18price + "   Amount: " + build18amount;
+                label24.Text = "Price: " + buildprice[17] + "   Amount: " + buildamount[17];
             }
         }
 
         private void button22_Click(object sender, EventArgs e)//When buying building 19
         {
-            if (cookies >= build19price)
+            if (cookies >= buildprice[18])
             {
-                cookies = cookies - build19price;
-                build19amount = build19amount + 1;
-                build19price = build19price + 7502500;
+                cookies = cookies - buildprice[18];
+                buildamount[18] = buildamount[18] + 1;
+                buildprice[18] = buildprice[18] + 7502500;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 75000;
-                label25.Text = "Price: " + build19price + "   Amount: " + build19amount;
+                label25.Text = "Price: " + buildprice[18] + "   Amount: " + buildamount[18];
             }
         }
 
         private void button23_Click(object sender, EventArgs e)//When buying building 20
         {
-            if (cookies >= build20price)
+            if (cookies >= buildprice[19])
             {
-                cookies = cookies - build20price;
-                build20amount = build20amount + 1;
-                build20price = build20price + 10003000;
+                cookies = cookies - buildprice[19];
+                buildamount[19] = buildamount[19] + 1;
+                buildprice[19] = buildprice[19] + 10003000;
                 label1.Text = cookies.ToString();
                 buildings = buildings + 1;
                 cookiessec = cookiessec + 100000;
-                label26.Text = "Price: " + build20price + "   Amount: " + build20amount;
+                label26.Text = "Price: " + buildprice[19] + "   Amount: " + buildamount[19];
             }
         }
 
         private void timer1000ms_Tick(object sender, EventArgs e) //Runs code every 1 second
         {
-            if (build1amount >= 1)
+            if (buildamount[0] >= 1)
             {
-                cookies = cookies + 1 * build1amount;
+                cookies = cookies + 1 * buildamount[0];
                 label1.Text = cookies.ToString();
                 total = total + 1;
             }
@@ -503,39 +399,39 @@ namespace CookieClickerForms
 
         private void timer500ms_Tick(object sender, EventArgs e) //Runs code every 0,5 second
         {
-            if (build3amount >= 1)
+            if (buildamount[2] >= 1)
             {
-                cookies = cookies + 5 * build3amount;
+                cookies = cookies + 5 * buildamount[2];
                 label1.Text = cookies.ToString();
-                total = total + 5 * build3amount;
+                total = total + 5 * buildamount[2];
             }
         }
 
         private void timer200ms_Tick(object sender, EventArgs e) //Runs code every 0,2 second
         {
-            if (build2amount >= 1)
+            if (buildamount[1] >= 1)
             {
-                cookies = cookies + 1 * build2amount;
+                cookies = cookies + 1 * buildamount[1];
                 label1.Text = cookies.ToString();
-                total = total + 1 * build2amount;
+                total = total + 1 * buildamount[1];
             }
-            if (build4amount >= 1)
+            if (buildamount[3] >= 1)
             {
-                cookies = cookies + 5 * build4amount;
+                cookies = cookies + 5 * buildamount[3];
                 label1.Text = cookies.ToString();
-                total = total + 5 * build4amount;
+                total = total + 5 * buildamount[3];
             }
-            if (build7amount >= 1)
+            if (buildamount[6] >= 1)
             {
-                cookies = cookies + 50 * build7amount;
+                cookies = cookies + 50 * buildamount[6];
                 label1.Text = cookies.ToString();
-                total = total + 50 * build7amount;
+                total = total + 50 * buildamount[6];
             }
-            if (build8amount >= 1)
+            if (buildamount[7] >= 1)
             {
-                cookies = cookies + 100 * build8amount;
+                cookies = cookies + 100 * buildamount[7];
                 label1.Text = cookies.ToString();
-                total = total + 100 * build8amount;
+                total = total + 100 * buildamount[7];
             }
             label32.Text = buildings.ToString();
             label33.Text = cookiessec.ToString();
@@ -543,89 +439,89 @@ namespace CookieClickerForms
 
         private void timer100ms_Tick(object sender, EventArgs e) //Runs code every 0,1 second
         {
-            if (build5amount >= 1)
+            if (buildamount[4] >= 1)
             {
-                cookies = cookies + 5 * build5amount;
+                cookies = cookies + 5 * buildamount[4];
                 label1.Text = cookies.ToString();
-                total = total + 5 * build5amount;
+                total = total + 5 * buildamount[4];
             }
-            if (build6amount >= 1)
+            if (buildamount[5] >= 1)
             {
-                cookies = cookies + 10 * build6amount;
+                cookies = cookies + 10 * buildamount[5];
                 label1.Text = cookies.ToString();
-                total = total + 10 * build6amount;
+                total = total + 10 * buildamount[5];
             }
-            if (build9amount >= 1)
+            if (buildamount[8] >= 1)
             {
-                cookies = cookies + 75 * build9amount;
+                cookies = cookies + 75 * buildamount[8];
                 label1.Text = cookies.ToString();
-                total = total + 75 * build9amount;
+                total = total + 75 * buildamount[8];
             }
-            if (build10amount >= 1)
+            if (buildamount[9] >= 1)
             {
-                cookies = cookies + 100 * build10amount;
+                cookies = cookies + 100 * buildamount[9];
                 label1.Text = cookies.ToString();
-                total = total + 100 * build10amount;
+                total = total + 100 * buildamount[9];
             }
-            if (build11amount >= 1)
+            if (buildamount[10] >= 1)
             {
-                cookies = cookies + 150 * build11amount;
+                cookies = cookies + 150 * buildamount[10];
                 label1.Text = cookies.ToString();
-                total = total + 150 * build11amount;
+                total = total + 150 * buildamount[10];
             }
-            if (build12amount >= 1)
+            if (buildamount[11] >= 1)
             {
-                cookies = cookies + 200 * build12amount;
+                cookies = cookies + 200 * buildamount[11];
                 label1.Text = cookies.ToString();
-                total = total + 200 * build12amount;
+                total = total + 200 * buildamount[11];
             }
-            if (build13amount >= 1)
+            if (buildamount[12] >= 1)
             {
-                cookies = cookies + 250 * build13amount;
+                cookies = cookies + 250 * buildamount[12];
                 label1.Text = cookies.ToString();
-                total = total + 250 * build13amount;
+                total = total + 250 * buildamount[12];
             }
-            if (build14amount >= 1)
+            if (buildamount[13] >= 1)
             {
-                cookies = cookies + 500 * build14amount;
+                cookies = cookies + 500 * buildamount[13];
                 label1.Text = cookies.ToString();
-                total = total + 500 * build14amount;
+                total = total + 500 * buildamount[13];
             }
-            if (build15amount >= 1)
+            if (buildamount[14] >= 1)
             {
-                cookies = cookies + 1000 * build15amount;
+                cookies = cookies + 1000 * buildamount[14];
                 label1.Text = cookies.ToString();
-                total = total + 1000 * build15amount;
+                total = total + 1000 * buildamount[14];
             }
-            if (build16amount >= 1)
+            if (buildamount[15] >= 1)
             {
-                cookies = cookies + 1500 * build16amount;
+                cookies = cookies + 1500 * buildamount[15];
                 label1.Text = cookies.ToString();
-                total = total + 1500 * build16amount;
+                total = total + 1500 * buildamount[15];
             }
-            if (build17amount >= 1)
+            if (buildamount[16] >= 1)
             {
-                cookies = cookies + 2500 * build17amount;
+                cookies = cookies + 2500 * buildamount[16];
                 label1.Text = cookies.ToString();
-                total = total + 2500 * build17amount;
+                total = total + 2500 * buildamount[16];
             }
-            if (build18amount >= 1)
+            if (buildamount[17] >= 1)
             {
-                cookies = cookies + 5000 * build18amount;
+                cookies = cookies + 5000 * buildamount[17];
                 label1.Text = cookies.ToString();
-                total = total + 5000 * build18amount;
+                total = total + 5000 * buildamount[17];
             }
-            if (build19amount >= 1)
+            if (buildamount[18] >= 1)
             {
-                cookies = cookies + 7500 * build19amount;
+                cookies = cookies + 7500 * buildamount[18];
                 label1.Text = cookies.ToString();
-                total = total + 7500 * build19amount;
+                total = total + 7500 * buildamount[18];
             }
-            if (build20amount >= 1)
+            if (buildamount[19] >= 1)
             {
-                cookies = cookies + 10000 * build20amount;
+                cookies = cookies + 10000 * buildamount[19];
                 label1.Text = cookies.ToString();
-                total = total + 10000 * build20amount;
+                total = total + 10000 * buildamount[19];
             }
             if (record < cookies)
             {
@@ -639,122 +535,122 @@ namespace CookieClickerForms
         {
             if (cookies >= 1000)
             {
-                if (acha == false)
+                if (ach[0] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 1000+ cookies.";
                 }
-                acha = true;
+                ach[0] = true;
             }
             if (cookies >= 10000)
             {
-                if (achb == false)
+                if (ach[1] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 10000+ cookies!";
                 }
-                achb = true;
+                ach[1] = true;
             }
             if (cookies >= 100000)
             {
-                if (achc == false)
+                if (ach[2] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 100000+ cookies!!";
                 }
-                achc = true;
+                ach[2] = true;
             }
             if (cookies >= 1000000)
             {
-                if (achd == false)
+                if (ach[3] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 1000000+ cookies!!!";
                 }
-                achd = true;
+                ach[3] = true;
             }
             if (cookies >= 10000000)
             {
-                if (ache == false)
+                if (ach[4] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 10000000+ cookies!!!!";
                 }
-                ache = true;
+                ach[4] = true;
             }
             if (cookies >= 100000000)
             {
-                if (achf == false)
+                if (ach[5] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 100000000+ cookies!1!!!";
                 }
-                achf = true;
+                ach[5] = true;
             }
             if (cookies >= 1000000000)
             {
-                if (achg == false)
+                if (ach[6] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 1000000000+ cookies!!!1!1";
                 }
-                achg = true;
+                ach[6] = true;
             }
             if (buildings >= 25)
             {
-                if (achh == false)
+                if (ach[7] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 25+ Buildings.";
                 }
-                achh = true;
+                ach[7] = true;
             }
             if (buildings >= 50)
             {
-                if (achi == false)
+                if (ach[8] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 50+ Buildings!";
                 }
-                achi = true;
+                ach[8] = true;
             }
             if (buildings >= 75)
             {
-                if (achj == false)
+                if (ach[9] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 75+ Buildings!!";
                 }
-                achj = true;
+                ach[9] = true;
             }
             if (buildings >= 100)
             {
-                if (achk == false)
+                if (ach[10] == false)
                 {
                     achievements = achievements + 1;
                     label36.Text = achievements + "/" + achievementamount + " - 100+ Buildings!1!";
                 }
-                achk = true;
+                ach[10] = true;
             }
             if (savedgame == true)
             {
-                if (achl == false)
+                if (ach[11] == false)
                 {
                     achievements = achievements + 1;
                     savedgame = true;
                     label36.Text = achievements + "/" + achievementamount + " - Saved the game.";
                 }
-                achl = true;
+                ach[11] = true;
             }
             if (loadedgame == true)
             {
-                if (achm == false)
+                if (ach[12] == false)
                 {
                     achievements = achievements + 1;
                     loadedgame = false;
                     label36.Text = achievements + "/" + achievementamount + " - Loaded the game.";
                 }
-                achm = true;
+                ach[12] = true;
             }
         }
 
@@ -767,58 +663,7 @@ namespace CookieClickerForms
             totalmadetxt = total.ToString();
             buildingstxt = buildings.ToString();
             cookiessectxt = cookiessec.ToString();
-            build1amounttxt = build1amount.ToString();
-            build2amounttxt = build2amount.ToString();
-            build3amounttxt = build3amount.ToString();
-            build4amounttxt = build4amount.ToString();
-            build5amounttxt = build5amount.ToString();
-            build6amounttxt = build6amount.ToString();
-            build7amounttxt = build7amount.ToString();
-            build8amounttxt = build8amount.ToString();
-            build9amounttxt = build9amount.ToString();
-            build10amounttxt = build10amount.ToString();
-            build11amounttxt = build11amount.ToString();
-            build12amounttxt = build12amount.ToString();
-            build13amounttxt = build13amount.ToString();
-            build14amounttxt = build14amount.ToString();
-            build15amounttxt = build15amount.ToString();
-            build16amounttxt = build16amount.ToString();
-            build17amounttxt = build17amount.ToString();
-            build18amounttxt = build18amount.ToString();
-            build19amounttxt = build19amount.ToString();
-            build20amounttxt = build20amount.ToString();
-            build1pricetxt = build1price.ToString();
-            build2pricetxt = build2price.ToString();
-            build3pricetxt = build3price.ToString();
-            build4pricetxt = build4price.ToString();
-            build5pricetxt = build5price.ToString();
-            build6pricetxt = build6price.ToString();
-            build7pricetxt = build7price.ToString();
-            build8pricetxt = build8price.ToString();
-            build9pricetxt = build9price.ToString();
-            build10pricetxt = build10price.ToString();
-            build11pricetxt = build11price.ToString();
-            build12pricetxt = build12price.ToString();
-            build13pricetxt = build13price.ToString();
-            build14pricetxt = build14price.ToString();
-            build15pricetxt = build15price.ToString();
-            build16pricetxt = build16price.ToString();
-            build17pricetxt = build17price.ToString();
-            build18pricetxt = build18price.ToString();
-            build19pricetxt = build19price.ToString();
-            build20pricetxt = build20price.ToString();
             achievementamounttxt = achievementamount.ToString();
-            achatxt = acha;
-            achatxt = achb;
-            achatxt = achc;
-            achatxt = achd;
-            achatxt = ache;
-            achatxt = achf;
-            achatxt = achg;
-            achatxt = achh;
-            achatxt = achi;
-            achatxt = achj;
-            achatxt = achk;
             upgradeamounttxt = upgradeamount.ToString();
             upgradepricetxt = upgradeprice.ToString();
         MessageBox.Show("Saved at game file location. \r\n\r\nTo load again, make sure that you have the saved file in same directory as the game!");
@@ -829,58 +674,60 @@ namespace CookieClickerForms
             Save.WriteLine(totalmadetxt);
             Save.WriteLine(buildingstxt);
             Save.WriteLine(cookiessectxt);
-            Save.WriteLine(build1amounttxt);
-            Save.WriteLine(build2amounttxt);
-            Save.WriteLine(build3amounttxt);
-            Save.WriteLine(build4amounttxt);
-            Save.WriteLine(build5amounttxt);
-            Save.WriteLine(build6amounttxt);
-            Save.WriteLine(build7amounttxt);
-            Save.WriteLine(build8amounttxt);
-            Save.WriteLine(build9amounttxt);
-            Save.WriteLine(build10amounttxt);
-            Save.WriteLine(build11amounttxt);
-            Save.WriteLine(build12amounttxt);
-            Save.WriteLine(build13amounttxt);
-            Save.WriteLine(build14amounttxt);
-            Save.WriteLine(build15amounttxt);
-            Save.WriteLine(build16amounttxt);
-            Save.WriteLine(build17amounttxt);
-            Save.WriteLine(build18amounttxt);
-            Save.WriteLine(build19amounttxt);
-            Save.WriteLine(build20amounttxt);
-            Save.WriteLine(build1pricetxt);
-            Save.WriteLine(build2pricetxt);
-            Save.WriteLine(build3pricetxt);
-            Save.WriteLine(build4pricetxt);
-            Save.WriteLine(build5pricetxt);
-            Save.WriteLine(build6pricetxt);
-            Save.WriteLine(build7pricetxt);
-            Save.WriteLine(build8pricetxt);
-            Save.WriteLine(build9pricetxt);
-            Save.WriteLine(build10pricetxt);
-            Save.WriteLine(build11pricetxt);
-            Save.WriteLine(build12pricetxt);
-            Save.WriteLine(build13pricetxt);
-            Save.WriteLine(build14pricetxt);
-            Save.WriteLine(build15pricetxt);
-            Save.WriteLine(build16pricetxt);
-            Save.WriteLine(build17pricetxt);
-            Save.WriteLine(build18pricetxt);
-            Save.WriteLine(build19pricetxt);
-            Save.WriteLine(build20pricetxt);
+            Save.WriteLine(buildamount[0]);
+            Save.WriteLine(buildamount[1]);
+            Save.WriteLine(buildamount[2]);
+            Save.WriteLine(buildamount[3]);
+            Save.WriteLine(buildamount[4]);
+            Save.WriteLine(buildamount[5]);
+            Save.WriteLine(buildamount[6]);
+            Save.WriteLine(buildamount[7]);
+            Save.WriteLine(buildamount[8]);
+            Save.WriteLine(buildamount[9]);
+            Save.WriteLine(buildamount[10]);
+            Save.WriteLine(buildamount[11]);
+            Save.WriteLine(buildamount[12]);
+            Save.WriteLine(buildamount[13]);
+            Save.WriteLine(buildamount[14]);
+            Save.WriteLine(buildamount[15]);
+            Save.WriteLine(buildamount[16]);
+            Save.WriteLine(buildamount[17]);
+            Save.WriteLine(buildamount[18]);
+            Save.WriteLine(buildamount[19]);
+            Save.WriteLine(buildprice[0]);
+            Save.WriteLine(buildprice[1]);
+            Save.WriteLine(buildprice[2]);
+            Save.WriteLine(buildprice[3]);
+            Save.WriteLine(buildprice[4]);
+            Save.WriteLine(buildprice[5]);
+            Save.WriteLine(buildprice[6]);
+            Save.WriteLine(buildprice[7]);
+            Save.WriteLine(buildprice[8]);
+            Save.WriteLine(buildprice[9]);
+            Save.WriteLine(buildprice[10]);
+            Save.WriteLine(buildprice[11]);
+            Save.WriteLine(buildprice[12]);
+            Save.WriteLine(buildprice[13]);
+            Save.WriteLine(buildprice[14]);
+            Save.WriteLine(buildprice[15]);
+            Save.WriteLine(buildprice[16]);
+            Save.WriteLine(buildprice[17]);
+            Save.WriteLine(buildprice[18]);
+            Save.WriteLine(buildprice[19]);
             Save.WriteLine(achievementamounttxt);
-            Save.WriteLine(achatxt);
-            Save.WriteLine(achbtxt);
-            Save.WriteLine(achctxt);
-            Save.WriteLine(achdtxt);
-            Save.WriteLine(achetxt);
-            Save.WriteLine(achftxt);
-            Save.WriteLine(achgtxt);
-            Save.WriteLine(achhtxt);
-            Save.WriteLine(achitxt);
-            Save.WriteLine(achjtxt);
-            Save.WriteLine(achktxt);
+            Save.WriteLine(ach[0]);
+            Save.WriteLine(ach[1]);
+            Save.WriteLine(ach[2]);
+            Save.WriteLine(ach[3]);
+            Save.WriteLine(ach[4]);
+            Save.WriteLine(ach[5]);
+            Save.WriteLine(ach[6]);
+            Save.WriteLine(ach[7]);
+            Save.WriteLine(ach[8]);
+            Save.WriteLine(ach[9]);
+            Save.WriteLine(ach[10]);
+            Save.WriteLine(ach[11]);
+            Save.WriteLine(ach[12]);
             Save.WriteLine(upgradeamounttxt);
             Save.WriteLine(upgradepricetxt);
             Save.Close();
@@ -898,84 +745,86 @@ namespace CookieClickerForms
             total = Convert.ToInt64(reader.ReadLine());
             buildings = Convert.ToInt32(reader.ReadLine());
             cookiessec = Convert.ToInt64(reader.ReadLine());
-            build1amount = Convert.ToInt32(reader.ReadLine());
-            build2amount = Convert.ToInt32(reader.ReadLine());
-            build3amount = Convert.ToInt32(reader.ReadLine());
-            build4amount = Convert.ToInt32(reader.ReadLine());
-            build5amount = Convert.ToInt32(reader.ReadLine());
-            build6amount = Convert.ToInt32(reader.ReadLine());
-            build7amount = Convert.ToInt32(reader.ReadLine());
-            build8amount = Convert.ToInt32(reader.ReadLine());
-            build9amount = Convert.ToInt32(reader.ReadLine());
-            build10amount = Convert.ToInt32(reader.ReadLine());
-            build11amount = Convert.ToInt32(reader.ReadLine());
-            build12amount = Convert.ToInt32(reader.ReadLine());
-            build13amount = Convert.ToInt32(reader.ReadLine());
-            build14amount = Convert.ToInt32(reader.ReadLine());
-            build15amount = Convert.ToInt32(reader.ReadLine());
-            build16amount = Convert.ToInt32(reader.ReadLine());
-            build17amount = Convert.ToInt32(reader.ReadLine());
-            build18amount = Convert.ToInt32(reader.ReadLine());
-            build19amount = Convert.ToInt32(reader.ReadLine());
-            build20amount = Convert.ToInt32(reader.ReadLine());
-            build1price = Convert.ToInt32(reader.ReadLine());
-            build2price = Convert.ToInt32(reader.ReadLine());
-            build3price = Convert.ToInt32(reader.ReadLine());
-            build4price = Convert.ToInt32(reader.ReadLine());
-            build5price = Convert.ToInt32(reader.ReadLine());
-            build6price = Convert.ToInt32(reader.ReadLine());
-            build7price = Convert.ToInt32(reader.ReadLine());
-            build8price = Convert.ToInt32(reader.ReadLine());
-            build9price = Convert.ToInt32(reader.ReadLine());
-            build10price = Convert.ToInt32(reader.ReadLine());
-            build11price = Convert.ToInt32(reader.ReadLine());
-            build12price = Convert.ToInt32(reader.ReadLine());
-            build13price = Convert.ToInt32(reader.ReadLine());
-            build14price = Convert.ToInt32(reader.ReadLine());
-            build15price = Convert.ToInt32(reader.ReadLine());
-            build16price = Convert.ToInt32(reader.ReadLine());
-            build17price = Convert.ToInt32(reader.ReadLine());
-            build18price = Convert.ToInt32(reader.ReadLine());
-            build19price = Convert.ToInt32(reader.ReadLine());
-            build20price = Convert.ToInt32(reader.ReadLine());
+            buildamount[0] = Convert.ToInt32(reader.ReadLine());
+            buildamount[1] = Convert.ToInt32(reader.ReadLine());
+            buildamount[2] = Convert.ToInt32(reader.ReadLine());
+            buildamount[3] = Convert.ToInt32(reader.ReadLine());
+            buildamount[4] = Convert.ToInt32(reader.ReadLine());
+            buildamount[5] = Convert.ToInt32(reader.ReadLine());
+            buildamount[6] = Convert.ToInt32(reader.ReadLine());
+            buildamount[7] = Convert.ToInt32(reader.ReadLine());
+            buildamount[8] = Convert.ToInt32(reader.ReadLine());
+            buildamount[9] = Convert.ToInt32(reader.ReadLine());
+            buildamount[10] = Convert.ToInt32(reader.ReadLine());
+            buildamount[11] = Convert.ToInt32(reader.ReadLine());
+            buildamount[12] = Convert.ToInt32(reader.ReadLine());
+            buildamount[13] = Convert.ToInt32(reader.ReadLine());
+            buildamount[14] = Convert.ToInt32(reader.ReadLine());
+            buildamount[15] = Convert.ToInt32(reader.ReadLine());
+            buildamount[16] = Convert.ToInt32(reader.ReadLine());
+            buildamount[17] = Convert.ToInt32(reader.ReadLine());
+            buildamount[18] = Convert.ToInt32(reader.ReadLine());
+            buildamount[19] = Convert.ToInt32(reader.ReadLine());
+            buildprice[0] = Convert.ToInt32(reader.ReadLine());
+            buildprice[1] = Convert.ToInt32(reader.ReadLine());
+            buildprice[2] = Convert.ToInt32(reader.ReadLine());
+            buildprice[3] = Convert.ToInt32(reader.ReadLine());
+            buildprice[4] = Convert.ToInt32(reader.ReadLine());
+            buildprice[5] = Convert.ToInt32(reader.ReadLine());
+            buildprice[6] = Convert.ToInt32(reader.ReadLine());
+            buildprice[7] = Convert.ToInt32(reader.ReadLine());
+            buildprice[8] = Convert.ToInt32(reader.ReadLine());
+            buildprice[9] = Convert.ToInt32(reader.ReadLine());
+            buildprice[10] = Convert.ToInt32(reader.ReadLine());
+            buildprice[11] = Convert.ToInt32(reader.ReadLine());
+            buildprice[12] = Convert.ToInt32(reader.ReadLine());
+            buildprice[13] = Convert.ToInt32(reader.ReadLine());
+            buildprice[14] = Convert.ToInt32(reader.ReadLine());
+            buildprice[15] = Convert.ToInt32(reader.ReadLine());
+            buildprice[16] = Convert.ToInt32(reader.ReadLine());
+            buildprice[17] = Convert.ToInt32(reader.ReadLine());
+            buildprice[18] = Convert.ToInt32(reader.ReadLine());
+            buildprice[19] = Convert.ToInt32(reader.ReadLine());
             achievementamount = Convert.ToInt32(reader.ReadLine());
-            acha = Convert.ToBoolean(reader.ReadLine());
-            achb = Convert.ToBoolean(reader.ReadLine());
-            achc = Convert.ToBoolean(reader.ReadLine());
-            achd = Convert.ToBoolean(reader.ReadLine());
-            ache = Convert.ToBoolean(reader.ReadLine());
-            achf = Convert.ToBoolean(reader.ReadLine());
-            achg = Convert.ToBoolean(reader.ReadLine());
-            achh = Convert.ToBoolean(reader.ReadLine());
-            achi = Convert.ToBoolean(reader.ReadLine());
-            achj = Convert.ToBoolean(reader.ReadLine());
-            achk = Convert.ToBoolean(reader.ReadLine());
+            ach[0] = Convert.ToBoolean(reader.ReadLine());
+            ach[1] = Convert.ToBoolean(reader.ReadLine());
+            ach[2] = Convert.ToBoolean(reader.ReadLine());
+            ach[3] = Convert.ToBoolean(reader.ReadLine());
+            ach[4] = Convert.ToBoolean(reader.ReadLine());
+            ach[5] = Convert.ToBoolean(reader.ReadLine());
+            ach[6] = Convert.ToBoolean(reader.ReadLine());
+            ach[7] = Convert.ToBoolean(reader.ReadLine());
+            ach[8] = Convert.ToBoolean(reader.ReadLine());
+            ach[9] = Convert.ToBoolean(reader.ReadLine());
+            ach[10] = Convert.ToBoolean(reader.ReadLine());
+            ach[11] = Convert.ToBoolean(reader.ReadLine());
+            ach[12] = Convert.ToBoolean(reader.ReadLine());
             upgradeamount = Convert.ToInt32(reader.ReadLine());
             upgradeprice = Convert.ToInt32(reader.ReadLine());
             reader.Close();
 
             label1.Text = cookies.ToString();
             label3.Text = "Price: " + upgradeprice + "   Amount: " + upgradeamount;
-            label4.Text = "Price: " + build1price + "   Amount: " + build1amount;
-            label5.Text = "Price: " + build2price + "   Amount: " + build2amount;
-            label6.Text = "Price: " + build3price + "   Amount: " + build3amount;
-            label7.Text = "Price: " + build4price + "   Amount: " + build4amount;
-            label8.Text = "Price: " + build5price + "   Amount: " + build5amount;
-            label9.Text = "Price: " + build6price + "   Amount: " + build6amount;
-            label10.Text = "Price: " + build7price + "   Amount: " + build7amount;
-            label11.Text = "Price: " + build8price + "   Amount: " + build8amount;
-            label12.Text = "Price: " + build9price + "   Amount: " + build9amount;
-            label13.Text = "Price: " + build10price + "   Amount: " + build10amount;
-            label14.Text = "Price: " + build11price + "   Amount: " + build11amount;
-            label15.Text = "Price: " + build12price + "   Amount: " + build12amount;
-            label16.Text = "Price: " + build13price + "   Amount: " + build13amount;
-            label17.Text = "Price: " + build14price + "   Amount: " + build14amount;
-            label18.Text = "Price: " + build15price + "   Amount: " + build15amount;
-            label19.Text = "Price: " + build16price + "   Amount: " + build16amount;
-            label23.Text = "Price: " + build17price + "   Amount: " + build17amount;
-            label24.Text = "Price: " + build18price + "   Amount: " + build18amount;
-            label25.Text = "Price: " + build19price + "   Amount: " + build19amount;
-            label26.Text = "Price: " + build20price + "   Amount: " + build20amount;
+            label4.Text = "Price: " + buildprice[0] + "   Amount: " + buildamount[0];
+            label5.Text = "Price: " + buildprice[1] + "   Amount: " + buildamount[1];
+            label6.Text = "Price: " + buildprice[2] + "   Amount: " + buildamount[2];
+            label7.Text = "Price: " + buildprice[3] + "   Amount: " + buildamount[3];
+            label8.Text = "Price: " + buildprice[4] + "   Amount: " + buildamount[4];
+            label9.Text = "Price: " + buildprice[5] + "   Amount: " + buildamount[5];
+            label10.Text = "Price: " + buildprice[6] + "   Amount: " + buildamount[6];
+            label11.Text = "Price: " + buildprice[7] + "   Amount: " + buildamount[7];
+            label12.Text = "Price: " + buildprice[8] + "   Amount: " + buildamount[8];
+            label13.Text = "Price: " + buildprice[9] + "   Amount: " + buildamount[9];
+            label14.Text = "Price: " + buildprice[10] + "   Amount: " + buildamount[10];
+            label15.Text = "Price: " + buildprice[11] + "   Amount: " + buildamount[11];
+            label16.Text = "Price: " + buildprice[12] + "   Amount: " + buildamount[12];
+            label17.Text = "Price: " + buildprice[13] + "   Amount: " + buildamount[13];
+            label18.Text = "Price: " + buildprice[14] + "   Amount: " + buildamount[14];
+            label19.Text = "Price: " + buildprice[15] + "   Amount: " + buildamount[15];
+            label23.Text = "Price: " + buildprice[16] + "   Amount: " + buildamount[16];
+            label24.Text = "Price: " + buildprice[17] + "   Amount: " + buildamount[17];
+            label25.Text = "Price: " + buildprice[18] + "   Amount: " + buildamount[18];
+            label26.Text = "Price: " + buildprice[19] + "   Amount: " + buildamount[19];
             label37.Text = "Total clicks: " + totalclicktxt;
             label28.Text = total.ToString();
             label32.Text = buildings.ToString();
